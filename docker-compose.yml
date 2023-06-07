@@ -2,7 +2,7 @@ version: "3.9"
 services:
   web:
     build: .
-    command: python /Example/main.py
+    command: uvicorn main:app --reload --host localhost --port 8000
     volumes:
       - .:/Example
     ports:
