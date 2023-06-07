@@ -7,6 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from fastapi import FastAPI, Body, status
 from fastapi.responses import JSONResponse, FileResponse
 from contextlib import contextmanager
+from starlette.responses import JSONResponse
 
 #Data class for SQL base
 Base = declarative_base()
@@ -56,10 +57,11 @@ def save_data(data):
                 else:
                     pass
 
-@app.post("/api/{questions_num}")
-def response_question(questions_num: int):
+@app.post('/api/{questions_num}')
+async def response_question(questions_num: int):
     """API App takes one value INT for request questions on public API
     And saved data in PostgresSQL"""
+    print("Use APP")
     url = f'https://jservice.io/api/random?count={questions_num}'
     response = requests.get(url)
     questions = (response.json())
@@ -68,4 +70,4 @@ def response_question(questions_num: int):
         data.append(Data(id_question=quest['id'], question=quest['question'],
                     answer=quest['answer'], date_create=quest['created_at']))
     save_data(data)
-    return data
+    return JSONResponse(data)
