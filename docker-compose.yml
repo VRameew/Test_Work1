@@ -2,11 +2,11 @@ version: "3.9"
 services:
   web:
     build: .
-    command: uvicorn main:app --port 888
+    command: uvicorn main:app --port 8448 --host 0.0.0.0
     volumes:
       - .:/Example
     ports:
-      - 888:888
+      - 8448:8448
     depends_on:
       - db
   db:
