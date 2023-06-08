@@ -4,9 +4,7 @@ from sqlalchemy.orm import sessionmaker
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from sqlalchemy.ext.declarative import declarative_base
-from fastapi import FastAPI, Body, status
-from fastapi.responses import JSONResponse, FileResponse
-from contextlib import contextmanager
+from fastapi import FastAPI
 
 #Data class for SQL base
 Base = declarative_base()
