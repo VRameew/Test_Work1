@@ -25,10 +25,10 @@ Request response looks like `[{"id_question":INT,"question":STR,"answer":STR,"da
 
 ### EXAMPLE RESPONSE
 
-Example righr response
+Example of a valid request
 
 `[{"id_question":108883,"question":"Tired of eating mule jerky, Vicksburg fell in July 1863 after a 6-week one of these military tactics","answer":"a siege","date_create":"2022-12-30T19:38:52.192Z"}]`
 
-Example false response
+Example of an erroneous response
 
 `{"detail":[{"loc":["path","questions_num"],"msg":"value is not a valid integer","type":"type_error.integer"}]}`
