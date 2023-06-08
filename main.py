@@ -2,7 +2,6 @@ import requests
 import sqlalchemy as sa
 from sqlalchemy.orm import sessionmaker
 import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from sqlalchemy.ext.declarative import declarative_base
 from fastapi import FastAPI
 
